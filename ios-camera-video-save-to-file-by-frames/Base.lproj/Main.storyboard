@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_camera_video_save_to_file_by_frames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previewing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJX-70-nEU">
+                                <rect key="frame" x="258" y="20" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIh-yr-CXB">
+                                <rect key="frame" x="20" y="49" width="560" height="493"/>
+                                <color key="backgroundColor" red="0.60833978829088764" green="1" blue="0.70719078090574439" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-yy-obB">
+                                <rect key="frame" x="20" y="555" width="130" height="30"/>
+                                <state key="normal" title="Start Record Video"/>
+                                <connections>
+                                    <action selector="startRecordVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jxz-K1-6mI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxN-Xg-Z7u">
+                                <rect key="frame" x="443" y="555" width="137" height="30"/>
+                                <state key="normal" title="Finish Record Video"/>
+                                <connections>
+                                    <action selector="finishRecordVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TzX-0T-Jyh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96315722558266881" green="1" blue="0.81754430630450425" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ABT-yy-obB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="0XG-Ho-E8G"/>
+                            <constraint firstAttribute="trailing" secondItem="bxN-Xg-Z7u" secondAttribute="trailing" constant="20" id="19H-PX-A4a"/>
+                            <constraint firstItem="OJX-70-nEU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2pP-g4-mYi"/>
+                            <constraint firstAttribute="trailing" secondItem="FIh-yr-CXB" secondAttribute="trailing" constant="20" id="Avz-lB-mq6"/>
+                            <constraint firstItem="FIh-yr-CXB" firstAttribute="top" secondItem="OJX-70-nEU" secondAttribute="bottom" constant="8" id="CVN-WV-uhC"/>
+                            <constraint firstItem="FIh-yr-CXB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="NOr-06-PCB"/>
+                            <constraint firstItem="bxN-Xg-Z7u" firstAttribute="top" secondItem="FIh-yr-CXB" secondAttribute="bottom" constant="13" id="NmA-5m-Mb4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ABT-yy-obB" secondAttribute="bottom" constant="15" id="RUj-bh-Ein"/>
+                            <constraint firstItem="OJX-70-nEU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cfi-vK-05L"/>
+                            <constraint firstItem="FIh-yr-CXB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tjL-Bp-T3F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bxN-Xg-Z7u" secondAttribute="bottom" constant="15" id="tkV-rz-Bu0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="FIh-yr-CXB" id="npX-LR-TjD"/>
+                        <outlet property="finishRecordVideoBtn" destination="bxN-Xg-Z7u" id="62y-qZ-fin"/>
+                        <outlet property="startRecordVideoBtn" destination="ABT-yy-obB" id="Ruj-7T-1DF"/>
+                        <outlet property="videoCaptureStatusLabel" destination="OJX-70-nEU" id="czH-jx-iDm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="405" y="406"/>
         </scene>
     </scenes>
 </document>
